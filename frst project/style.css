@@ -1,0 +1,466 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+/* Navigation bar styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #337a8e; /* Modern look */
+    padding: 10px 5%; /* Adjusted padding for larger navbar */
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for a modern touch */
+}   
+
+.navbar img {
+    width: 80px; /* Responsive logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0PX;
+    padding: 0PX;
+    flex-grow: 1PX;
+    justify-content: center; /* Center items horizontally */
+}
+
+.navbar li {
+    margin: 0PX 15px; /* Spacing on both sides */
+}
+
+.navbar a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 20px; /* Padding for prominent look */
+    display: block;
+    text-align: center;
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #3d9bb8; /* Updated hover color */
+    transform: scale(1.05); /* Slightly enlarges on hover */
+    border-radius: 20px;}
+
+.navbar a:active {
+    transform: scale(1); /* Returns to normal size when clicked */
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 1.5em;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #e2dddd;
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in;
+    }
+
+    .navbar ul.show {
+        max-height: 300px; /* Expanded menu height */
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+
+/* Slider Styles */
+.slider {
+    height: 250px;
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.slide-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: calc(150px * 10); /* Adjust based on the number of slides */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move half of the track's width */
+    }
+}
+
+.slide {
+    height: 100px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.slide img {
+    width: 130px;
+    transition: transform 0.3s;
+}
+
+.slide img:hover {
+    transform: scale(0.9);
+}
+
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+
+
+/* Main image container */
+.image-container {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.img2 {
+    width: 100%;
+    height: auto;
+    background-image: url('/website/image/headerbg.png');
+    background-size: cover;
+    background-position: center;
+    max-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+.img2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    box-shadow: #000000;
+}
+
+h2 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+h4 {position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff0000;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+/* Content section */
+.content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.imga {
+    max-width: 40%;
+    height: auto;
+    flex: 0 0 100%;
+    object-fit: cover;
+}
+
+.text-content {
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+h4 {
+    margin-top: 20px;
+    color: #555;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    background-color: #868686;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+
+    transition: 0.7s;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.card-content .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #3d9bb8;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.card-content .btn:hover {
+    background-color: #337a8e;
+}
+
+/* Footer styles */
+.footer505 {
+    background-color: #337a8e;
+    padding: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social a:hover {
+    background-color: white;
+    color: black;
+}
+
+.footer-nav {
+    margin-bottom: 20px;
+}
+
+.footer-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #000000;
+}
+
+.footer-bottom {
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px; /* Adjusted padding */
+    }
+
+    .navbar ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #5F5F5F;
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in;
+    }
+
+    .navbar ul.show {
+        max-height: 300px; /* Expanded menu height */
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .imga {
+        max-width: 100%; /* Full width for images */
+        margin-bottom: 20px;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+}
+/* Counting Section Styles */
+.counting-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.counter-container {
+    font-size: 1.5em;
+    color: #337a8e;
+}
+
+.counter {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 50px 40px;
+    animation: count 2s ease-in-out forwards;
+}
+
+.counter-container span {
+    display: block;
+    font-size: 0.75em;
+    color: #555;
+}
+
+@keyframes count {
+    0% {
+        content: attr(data-target);
+    }
+}
+
+@media (max-width: 768px) {
+    .counter-container {
+        font-size: 1em;
+    }
+
+    .counter {
+        font-size: 2em;
+    }
+}
+
